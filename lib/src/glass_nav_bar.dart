@@ -6,6 +6,11 @@ import 'glass_animation.dart';
 import 'glass_theme.dart';
 import 'dart:math' as math;
 
+/// Helper extension to use withValues instead of deprecated withOpacity
+extension _ColorAlpha on Color {
+  Color withAlpha2(double opacity) => withValues(alpha: opacity.clamp(0.0, 1.0));
+}
+
 /// A beautiful glassmorphism navigation bar with liquid lens effect.
 ///
 /// [GlassNavBar] provides a modern, iOS 26-style navigation experience with
@@ -712,7 +717,7 @@ class _GlassNavBarState extends State<GlassNavBar>
                end: Alignment.bottomRight,
                colors: [
                  widget.selectedItemColor,
-                 Colors.white.withOpacity(0.8 * scaleAmount),
+                 Colors.white.withAlpha2(0.8 * scaleAmount),
                  widget.selectedItemColor,
                ],
                stops: const [0.0, 0.5, 1.0],
@@ -729,7 +734,7 @@ class _GlassNavBarState extends State<GlassNavBar>
            shape: BoxShape.circle,
            boxShadow: [
              BoxShadow(
-                color: widget.selectedItemColor.withOpacity(0.8 * scaleAmount),
+                color: widget.selectedItemColor.withAlpha2(0.8 * scaleAmount),
                 blurRadius: 15 * scaleAmount,
                 spreadRadius: 2 * scaleAmount,
              )
@@ -788,11 +793,11 @@ class _SpectralLensPainter extends CustomPainter {
       ..blendMode = BlendMode.overlay 
       ..shader = SweepGradient(
         colors: [
-           (borderColor ?? Colors.black).withOpacity(clampOpacity(0.2 * glassiness)), // Custom color or default
-           Colors.white.withOpacity(clampOpacity(0.4 * glassiness)), 
-           (borderColor ?? Colors.black).withOpacity(clampOpacity(0.3 * glassiness)), 
-           Colors.white.withOpacity(clampOpacity(0.4 * glassiness)), 
-           (borderColor ?? Colors.black).withOpacity(clampOpacity(0.2 * glassiness)), 
+           (borderColor ?? Colors.black).withAlpha2(clampOpacity(0.2 * glassiness)), // Custom color or default
+           Colors.white.withAlpha2(clampOpacity(0.4 * glassiness)), 
+           (borderColor ?? Colors.black).withAlpha2(clampOpacity(0.3 * glassiness)), 
+           Colors.white.withAlpha2(clampOpacity(0.4 * glassiness)), 
+           (borderColor ?? Colors.black).withAlpha2(clampOpacity(0.2 * glassiness)), 
         ],
         stops: const [0.0, 0.25, 0.5, 0.75, 1.0],
         transform: GradientRotation(3.14 / 4), // Diagonal light
@@ -808,8 +813,8 @@ class _SpectralLensPainter extends CustomPainter {
         center: Alignment(0.0, -0.7), // Top center
         radius: 0.5,
         colors: [
-           Colors.white.withOpacity(clampOpacity(0.9 * glassiness)),
-           Colors.white.withOpacity(0.0),
+           Colors.white.withAlpha2(clampOpacity(0.9 * glassiness)),
+           Colors.white.withAlpha2(0.0),
         ],
         stops: const [0.0, 0.5],
       ).createShader(rect);
@@ -830,8 +835,8 @@ class _SpectralLensPainter extends CustomPainter {
         center: Alignment(0.0, 0.8), 
         radius: 0.6,
         colors: [
-           Colors.white.withOpacity(clampOpacity(0.4 * glassiness)),
-           Colors.white.withOpacity(0.0),
+           Colors.white.withAlpha2(clampOpacity(0.4 * glassiness)),
+           Colors.white.withAlpha2(0.0),
         ],
         stops: const [0.0, 0.6],
       ).createShader(rect);

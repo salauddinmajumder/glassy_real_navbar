@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'glass_animation.dart';
 
+/// Helper extension to use withValues instead of deprecated withOpacity
+extension _ColorAlpha on Color {
+  Color withAlpha2(double opacity) => withValues(alpha: opacity.clamp(0.0, 1.0));
+}
+
 /// Pre-built theme presets for [GlassNavBar].
 /// 
 /// These presets provide complete styling configurations optimized for
@@ -299,7 +304,7 @@ extension GlassNavBarPresetExtension on GlassNavBarPreset {
           backgroundColor: Colors.black,
           selectedItemColor: Colors.cyanAccent,
           unselectedItemColor: Colors.white30,
-          lensBorderColor: Colors.cyanAccent.withOpacity(0.6),
+          lensBorderColor: Colors.cyanAccent.withAlpha2(0.6),
           glassiness: 1.5,
           barGlassiness: 1.2,
           animationEffect: GlassAnimation.bouncyWater,
@@ -340,7 +345,7 @@ extension GlassNavBarPresetExtension on GlassNavBarPreset {
           backgroundColor: const Color(0xFF0D0D15),
           selectedItemColor: Colors.purpleAccent,
           unselectedItemColor: Colors.white24,
-          lensBorderColor: Colors.purpleAccent.withOpacity(0.5),
+          lensBorderColor: Colors.purpleAccent.withAlpha2(0.5),
           glassiness: 1.8,
           barGlassiness: 1.3,
           animationEffect: GlassAnimation.wobblyJelly,
@@ -393,8 +398,8 @@ extension GlassNavBarPresetExtension on GlassNavBarPreset {
           lensRefraction: 1.5,
           backgroundColor: const Color(0xFF1A0A2E),
           selectedItemColor: const Color(0xFFFF6B35),
-          unselectedItemColor: const Color(0xFF8B5CF6).withOpacity(0.5),
-          lensBorderColor: const Color(0xFFFF6B35).withOpacity(0.4),
+          unselectedItemColor: const Color(0xFF8B5CF6).withAlpha2(0.5),
+          lensBorderColor: const Color(0xFFFF6B35).withAlpha2(0.4),
           glassiness: 1.4,
           barGlassiness: 1.2,
           animationEffect: GlassAnimation.viscousFluid,
@@ -411,7 +416,7 @@ extension GlassNavBarPresetExtension on GlassNavBarPreset {
           lensRefraction: 1.2,
           backgroundColor: const Color(0xFFF0EDE5),
           selectedItemColor: const Color(0xFF2D5A27),
-          unselectedItemColor: const Color(0xFF8B7355).withOpacity(0.6),
+          unselectedItemColor: const Color(0xFF8B7355).withAlpha2(0.6),
           glassiness: 0.6,
           barGlassiness: 0.5,
           animationEffect: GlassAnimation.softDrift,
@@ -428,8 +433,8 @@ extension GlassNavBarPresetExtension on GlassNavBarPreset {
           lensRefraction: 1.45,
           backgroundColor: const Color(0xFF0B0B1A),
           selectedItemColor: const Color(0xFFE0AAFF),
-          unselectedItemColor: const Color(0xFF7B68EE).withOpacity(0.4),
-          lensBorderColor: const Color(0xFFE0AAFF).withOpacity(0.3),
+          unselectedItemColor: const Color(0xFF7B68EE).withAlpha2(0.4),
+          lensBorderColor: const Color(0xFFE0AAFF).withAlpha2(0.3),
           glassiness: 1.6,
           barGlassiness: 1.4,
           animationEffect: GlassAnimation.zeroGravity,

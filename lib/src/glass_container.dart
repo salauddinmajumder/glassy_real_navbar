@@ -1,5 +1,11 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:vector_math/vector_math_64.dart' as vm;
+
+/// Helper extension to use withValues instead of deprecated withOpacity
+extension _ColorAlpha on Color {
+  Color withAlpha2(double opacity) => withValues(alpha: opacity.clamp(0.0, 1.0));
+}
 
 class GlassContainer extends StatefulWidget {
   final Widget? child;
@@ -94,9 +100,9 @@ class _GlassContainerState extends State<GlassContainer> {
       // Anchor the scale to the focal point to prevent the "sliding background" effect.
       if (targetFocalPoint != null) {
         final matrix = Matrix4.identity()
-          ..translate(targetFocalPoint.dx, targetFocalPoint.dy)
-          ..scale(widget.refraction)
-          ..translate(-targetFocalPoint.dx, -targetFocalPoint.dy);
+          ..translateByVector3(vm.Vector3(targetFocalPoint.dx, targetFocalPoint.dy, 0))
+          ..scaleByVector3(vm.Vector3(widget.refraction, widget.refraction, 1.0))
+          ..translateByVector3(vm.Vector3(-targetFocalPoint.dx, -targetFocalPoint.dy, 0));
         filter = ImageFilter.compose(
           outer: filter,
           inner: ImageFilter.matrix(matrix.storage),
@@ -124,7 +130,7 @@ class _GlassContainerState extends State<GlassContainer> {
               filter: filter,
               child: Container(
                 decoration: BoxDecoration(
-                  color: widget.color.withOpacity(widget.opacity),
+                  color: widget.color.withAlpha2(widget.opacity),
                   borderRadius: effectiveBorderRadius,
                   // Use a simpler gradient that respects the user's opacity choice directly
                   gradient: widget.gradient ??
@@ -132,8 +138,8 @@ class _GlassContainerState extends State<GlassContainer> {
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                         colors: [
-                          widget.color.withOpacity(widget.opacity),
-                          widget.color.withOpacity((widget.opacity * 0.8).clamp(0.0, 1.0)),
+                          widget.color.withAlpha2(widget.opacity),
+                          widget.color.withAlpha2((widget.opacity * 0.8).clamp(0.0, 1.0)),
                         ],
                       ),
                 ),
@@ -226,11 +232,11 @@ class _GlassBorderPainter extends CustomPainter {
         end: Alignment.bottomRight,
         transform: GradientRotation(lightAngle - 0.785), // Rotate relative to default diagonal
         colors: [
-           Colors.white.withOpacity((0.6 * glassiness).clamp(0.0, 1.0)), // Highlight
-           Colors.white.withOpacity(0.05), // Clear/Dark gap
-           Colors.white.withOpacity((0.3 * glassiness).clamp(0.0, 1.0)), // Mid-tone
-           Colors.black.withOpacity((0.2 * glassiness).clamp(0.0, 1.0)), // Shadow/Depth
-           Colors.white.withOpacity((0.5 * glassiness).clamp(0.0, 1.0)), // Final glint
+           Colors.white.withAlpha2((0.6 * glassiness).clamp(0.0, 1.0)), // Highlight
+           Colors.white.withAlpha2(0.05), // Clear/Dark gap
+           Colors.white.withAlpha2((0.3 * glassiness).clamp(0.0, 1.0)), // Mid-tone
+           Colors.black.withAlpha2((0.2 * glassiness).clamp(0.0, 1.0)), // Shadow/Depth
+           Colors.white.withAlpha2((0.5 * glassiness).clamp(0.0, 1.0)), // Final glint
         ],
         stops: const [0.0, 0.3, 0.5, 0.8, 1.0],
       ).createShader(rect);
@@ -246,7 +252,7 @@ class _GlassBorderPainter extends CustomPainter {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Colors.white.withOpacity((0.4 * glassiness).clamp(0.0, 1.0)),
+            Colors.white.withAlpha2((0.4 * glassiness).clamp(0.0, 1.0)),
             Colors.transparent,
           ],
         ).createShader(rect);
@@ -290,8 +296,8 @@ class _SpotlightBorderPainter extends CustomPainter {
         center: spotlightCenter,
         radius: 0.8, // Adjust for spread
         colors: [
-          color.withOpacity((0.8 * glassiness).clamp(0.0, 1.0)),
-          color.withOpacity(0.0),
+          color.withAlpha2((0.8 * glassiness).clamp(0.0, 1.0)),
+          color.withAlpha2(0.0),
         ],
         stops: const [0.0, 1.0],
       ).createShader(rect);
