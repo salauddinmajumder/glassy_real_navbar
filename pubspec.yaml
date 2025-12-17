@@ -1,0 +1,47 @@
+name: glassy_real_navbar
+description: >
+  The world's most beautiful glassmorphism navigation bar for Flutter.
+  Features realistic glass physics, liquid lens effects, 17+ animation presets,
+  drag-to-select, and complete customization. Perfect for iOS, Android, web & desktop.
+version: 1.0.1
+homepage: https://github.com/AASoftIR/glassy_real_navbar
+repository: https://github.com/AASoftIR/glassy_real_navbar
+issue_tracker: https://github.com/AASoftIR/glassy_real_navbar/issues
+
+topics:
+  - navigation
+  - glassmorphism
+  - ui
+  - animation
+  - navbar
+
+# screenshots:
+#   - description: 'Glassy navbar with liquid lens effect'
+#     path: screenshots/demo.gif
+
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  #         weight: 700
+  #
+  # For details regarding fonts in packages, see
+  # https://flutter.dev/to/font-from-package
