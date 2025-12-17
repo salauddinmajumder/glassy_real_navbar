@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/example/glassy_real_navbar/main/screenshots/logo.png" alt="Glassy Real Navbar" width="200"/>
+  <img src="https://raw.githubusercontent.com/salauddinmajumder/glassy_real_navbar/main/screenshots/logo.png" alt="Glassy Real Navbar" width="200"/>
 </p>
 
 <h1 align="center">🔮 Glassy Real Navbar</h1>
@@ -13,7 +13,7 @@
   <a href="https://pub.dev/packages/glassy_real_navbar/score"><img src="https://img.shields.io/pub/likes/glassy_real_navbar" alt="likes"></a>
   <a href="https://pub.dev/packages/glassy_real_navbar/score"><img src="https://img.shields.io/pub/points/glassy_real_navbar" alt="pub points"></a>
   <a href="https://pub.dev/packages/glassy_real_navbar/score"><img src="https://img.shields.io/pub/popularity/glassy_real_navbar" alt="popularity"></a>
-  <a href="https://github.com/example/glassy_real_navbar/blob/main/LICENSE"><img src="https://img.shields.io/github/license/example/glassy_real_navbar" alt="license"></a>
+  <a href="https://github.com/salauddinmajumder/glassy_real_navbar/blob/main/LICENSE"><img src="https://img.shields.io/github/license/salauddinmajumder/glassy_real_navbar" alt="license"></a>
 </p>
 
 <p align="center">
@@ -27,9 +27,9 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/AASoftIR/glassy_real_navbar/main/screenshots/1.gif" alt="Demo 1" width="250"/>
-  <img src="https://raw.githubusercontent.com/AASoftIR/glassy_real_navbar/main/screenshots/2.gif" alt="Demo 2" width="250"/>
-  <img src="https://raw.githubusercontent.com/AASoftIR/glassy_real_navbar/main/screenshots/3.gif" alt="Demo 3" width="250"/>
+  <img src="https://raw.githubusercontent.com/salauddinmajumder/glassy_real_navbar/main/screenshots/1.gif" alt="Demo 1" width="250"/>
+  <img src="https://raw.githubusercontent.com/salauddinmajumder/glassy_real_navbar/main/screenshots/2.gif" alt="Demo 2" width="250"/>
+  <img src="https://raw.githubusercontent.com/salauddinmajumder/glassy_real_navbar/main/screenshots/3.gif" alt="Demo 3" width="250"/>
 </p>
 
 ---
