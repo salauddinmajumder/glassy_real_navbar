@@ -95,6 +95,7 @@ class GlassNavBarItem {
 
   @override
   int get hashCode {
-    return Object.hash(icon, title, activeIcon, semanticLabel, badge, badgeColor);
+    return Object.hash(
+        icon, title, activeIcon, semanticLabel, badge, badgeColor);
   }
 }

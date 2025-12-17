@@ -3,14 +3,15 @@ import 'glass_animation.dart';
 
 /// Helper extension to use withValues instead of deprecated withOpacity
 extension _ColorAlpha on Color {
-  Color withAlpha2(double opacity) => withValues(alpha: opacity.clamp(0.0, 1.0));
+  Color withAlpha2(double opacity) =>
+      withValues(alpha: opacity.clamp(0.0, 1.0));
 }
 
 /// Pre-built theme presets for [GlassNavBar].
-/// 
+///
 /// These presets provide complete styling configurations optimized for
 /// different app aesthetics and use cases.
-/// 
+///
 /// Example:
 /// ```dart
 /// final theme = GlassNavBarPreset.cyberpunk.theme;
@@ -20,7 +21,7 @@ extension _ColorAlpha on Color {
 /// ```
 enum GlassNavBarPreset {
   /// Clean, subtle, iOS-inspired design.
-  /// 
+  ///
   /// Features:
   /// - Light background with soft blur
   /// - Minimal lens effect
@@ -28,7 +29,7 @@ enum GlassNavBarPreset {
   minimal,
 
   /// Dark mode with neon accents.
-  /// 
+  ///
   /// Features:
   /// - Dark glass background
   /// - Cyan/magenta neon glow
@@ -36,7 +37,7 @@ enum GlassNavBarPreset {
   cyberpunk,
 
   /// Premium, expensive feel with gold accents.
-  /// 
+  ///
   /// Features:
   /// - Frosted glass effect
   /// - Gold border highlights
@@ -44,7 +45,7 @@ enum GlassNavBarPreset {
   luxury,
 
   /// Playful, bouncy design for gaming apps.
-  /// 
+  ///
   /// Features:
   /// - High contrast colors
   /// - Maximum bounce physics
@@ -52,7 +53,7 @@ enum GlassNavBarPreset {
   gaming,
 
   /// Soft, calming design for wellness apps.
-  /// 
+  ///
   /// Features:
   /// - Muted, pastel colors
   /// - Slow, gentle animations
@@ -60,7 +61,7 @@ enum GlassNavBarPreset {
   zen,
 
   /// Bold, modern design with sharp edges.
-  /// 
+  ///
   /// Features:
   /// - Sharp snap animations
   /// - Square lens shape
@@ -68,7 +69,7 @@ enum GlassNavBarPreset {
   modern,
 
   /// Retro-futuristic with warm colors.
-  /// 
+  ///
   /// Features:
   /// - Orange/amber accents
   /// - Viscous fluid animation
@@ -76,7 +77,7 @@ enum GlassNavBarPreset {
   retrowave,
 
   /// Nature-inspired with earthy tones.
-  /// 
+  ///
   /// Features:
   /// - Green/brown colors
   /// - Soft drift animation
@@ -84,7 +85,7 @@ enum GlassNavBarPreset {
   nature,
 
   /// Space-themed with cosmic colors.
-  /// 
+  ///
   /// Features:
   /// - Deep purple/blue
   /// - Zero gravity animation
@@ -92,7 +93,7 @@ enum GlassNavBarPreset {
   cosmic,
 
   /// Professional, corporate design.
-  /// 
+  ///
   /// Features:
   /// - Navy/gray colors
   /// - Sharp, precise animations
@@ -101,7 +102,7 @@ enum GlassNavBarPreset {
 }
 
 /// Complete theme configuration for [GlassNavBar].
-/// 
+///
 /// Contains all styling properties needed to completely theme a navbar.
 /// Use [GlassNavBarPreset] for pre-built themes or create custom ones.
 class GlassNavBarThemeData {
@@ -207,7 +208,8 @@ class GlassNavBarThemeData {
     this.margin,
     this.barPadding,
     this.itemIconSize = 24,
-    this.itemTextStyle = const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+    this.itemTextStyle =
+        const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
     this.lensMotionBlurStrength = 15.0,
     this.borderLightSource = 0.785,
   });
@@ -266,7 +268,8 @@ class GlassNavBarThemeData {
       barPadding: barPadding ?? this.barPadding,
       itemIconSize: itemIconSize ?? this.itemIconSize,
       itemTextStyle: itemTextStyle ?? this.itemTextStyle,
-      lensMotionBlurStrength: lensMotionBlurStrength ?? this.lensMotionBlurStrength,
+      lensMotionBlurStrength:
+          lensMotionBlurStrength ?? this.lensMotionBlurStrength,
       borderLightSource: borderLightSource ?? this.borderLightSource,
     );
   }
@@ -330,7 +333,8 @@ extension GlassNavBarPresetExtension on GlassNavBarPreset {
           barGlassiness: 1.0,
           showLabels: true,
           animationEffect: GlassAnimation.heavyGlass,
-          animationPhysics: const SpringDescription(mass: 1.5, stiffness: 70, damping: 18),
+          animationPhysics:
+              const SpringDescription(mass: 1.5, stiffness: 70, damping: 18),
           activeItemAnimation: GlassActiveItemAnimation.shimmer,
           lensMotionBlurStrength: 8,
         );

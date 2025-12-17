@@ -92,7 +92,8 @@ GlassAnimationConfig getGlassAnimationConfig(GlassAnimation animation) {
     // --- 4. Hyper Quantum (Jittery teleportation) ---
     case GlassAnimation.hyperQuantum:
       return const GlassAnimationConfig(
-        physics: SpringDescription(mass: 0.05, stiffness: 900.0, damping: 100.0),
+        physics:
+            SpringDescription(mass: 0.05, stiffness: 900.0, damping: 100.0),
         wobble: true,
       );
 
