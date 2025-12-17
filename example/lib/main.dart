@@ -61,9 +61,6 @@ class _MainScaffoldState extends State<MainScaffold> {
 // =============================================================================
 // SCENARIO 1: ZEN READER (Light, Clean, Floating)
 // =============================================================================
-// =============================================================================
-// SCENARIO 1: ZEN READER (Light, Clean, Floating)
-// =============================================================================
 class ZenReaderPage extends StatefulWidget {
   final ValueChanged<int> onSwitchScenario;
   const ZenReaderPage({super.key, required this.onSwitchScenario});
@@ -219,13 +216,6 @@ void showScenarioPicker(BuildContext context, ValueChanged<int> onSelect) {
     }
   );
 }
-
-// ... (Existing Scenarios 1, 2, 3) ...
-// (I need to be careful not to delete Cyberpunk/PhotoGallery/ZenReader if I just paste from line 194. 
-//  Actually the user wants me to replace the picker and ADD the pages. 
-//  The ReplaceFileContent tool works on ranges. I will do this in chunks.)
-
-// CHUNK 1: Start with updating the Picker and main Scaffold children.
 
 
 // =============================================================================

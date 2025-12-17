@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/salauddinmajumder/glassy_real_navbar/main/screenshots/logo.png" alt="Glassy Real Navbar" width="200"/>
-</p>
 
 <h1 align="center">🔮 Glassy Real Navbar</h1>
 
@@ -9,22 +6,15 @@
 </p>
 
 <p align="center">
-  <a href="https://pub.dev/packages/glassy_real_navbar"><img src="https://img.shields.io/pub/v/glassy_real_navbar.svg" alt="pub version"></a>
-  <a href="https://pub.dev/packages/glassy_real_navbar/score"><img src="https://img.shields.io/pub/likes/glassy_real_navbar" alt="likes"></a>
-  <a href="https://pub.dev/packages/glassy_real_navbar/score"><img src="https://img.shields.io/pub/points/glassy_real_navbar" alt="pub points"></a>
-  <a href="https://pub.dev/packages/glassy_real_navbar/score"><img src="https://img.shields.io/pub/popularity/glassy_real_navbar" alt="popularity"></a>
-  <a href="https://github.com/salauddinmajumder/glassy_real_navbar/blob/main/LICENSE"><img src="https://img.shields.io/github/license/salauddinmajumder/glassy_real_navbar" alt="license"></a>
+  <img src="https://img.shields.io/badge/Platform-Flutter-blue?logo=flutter" alt="Platform"/>
+  <img src="https://img.shields.io/badge/Dart-%3E%3D3.0.0-blue?logo=dart" alt="Dart"/>
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs Welcome"/>
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-installation">Installation</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-customization">Customization</a> •
-  <a href="#-animation-presets">Animations</a> •
-  <a href="#-themes">Themes</a> •
-  <a href="#-api-reference">API</a>
+  <b>Author:</b> Salauddin Majumder • <a href="mailto:salauddinmajumder01@gmail.com">salauddinmajumder01@gmail.com</a> • <a href="https://salauddin4227.github.io/salauddinmajumder">Portfolio</a> • <a href="https://github.com/salauddin-majumder">GitHub</a>
 </p>
+
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/salauddinmajumder/glassy_real_navbar/main/screenshots/1.gif" alt="Demo 1" width="250"/>
@@ -57,7 +47,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  glassy_real_navbar: ^1.0.0
+  glassy_real_navbar: ^1.0.2
 ```
 
 Then run:
@@ -406,7 +396,7 @@ salauddinmajumder01@gmail.com
 ---
 
 <p align="center">
-  Made with 💎 by the Flutter community
+  Made by the Salauddin Majumder
 </p>
 
 <p align="center">
